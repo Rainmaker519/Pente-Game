@@ -1,0 +1,18 @@
+@startuml
+
+GameVariation -> Game: Create
+
+PlayerOption -> Game: Create
+
+Game -> GameRuleGeneric: Create
+
+GameRuleGeneric -> GameState: Create
+
+GameState -> GameBoard: Create
+
+GameState -> GameMoves: Create
+
+
+
+
+@enduml

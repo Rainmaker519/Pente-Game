@@ -1,0 +1,60 @@
+@startuml
+
+activate InitialBoard
+InitialBoard -> SelectedOptions: Select player option
+activate SelectedOptions
+
+InitialBoard -> SelectedOptions: Select rule set
+deactivate SelectedOptions
+
+InitialBoard -> GameBoard: Play game
+
+activate GameBoard
+
+SelectedOptions --> GameBoard: Selected player options
+activate SelectedOptions
+
+SelectedOptions --> GameBoard: Selected rule set
+deactivate SelectedOptions
+
+GameBoard -> Player: Players made
+deactivate GameBoard
+
+activate Player
+Player -> Stone: Stone placed
+activate Stone
+Player -> InitialBoard: Player starts new game
+Player -> GameBoard: Player restarts game
+activate GameBoard
+
+Stone -> Score: Stones are captured
+activate Score
+Stone --> Player: Turn change
+deactivate Player
+Score -> EndGame: Capture limit reached
+deactivate Score
+
+activate EndGame
+
+Stone -> EndGame: 5 stones in a row 
+deactivate Stone
+
+
+
+EndGame -> GameBoard: Restart game
+deactivate GameBoard
+
+EndGame -> InitialBoard: New game
+
+
+deactivate InitialBoard
+deactivate SelectedOptions
+deactivate Score
+deactivate EndGame
+
+
+
+
+
+
+@enduml

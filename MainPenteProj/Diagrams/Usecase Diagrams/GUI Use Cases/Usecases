@@ -1,0 +1,10 @@
+@startuml
+
+actor user 
+user -->( new game)
+user -->( quit)
+user -->( Change Game Variation)  
+user -->( Choose Player Mode) 
+user -->( Help) 
+user -->( play game)
+@enduml

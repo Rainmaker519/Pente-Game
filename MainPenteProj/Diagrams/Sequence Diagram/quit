@@ -1,0 +1,20 @@
+@startuml
+
+activate InitialBoard
+InitialBoard -> SelectedQuit: Show menus
+activate SelectedQuit
+deactivate InitialBoard
+SelectedQuit -> InitialBoard: Show pop up "are you sure you want to quit"   
+
+deactivate SelectedQuit
+activate InitialBoard
+InitialBoard -> InitialBoard: User responds "No"
+InitialBoard -> GracefulShutdown: User responds "Yes"
+activate GracefulShutdown
+
+
+deactivate InitialBoard
+
+deactivate GracefulShutdown
+
+@enduml

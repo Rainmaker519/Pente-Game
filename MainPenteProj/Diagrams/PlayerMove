@@ -1,0 +1,16 @@
+@startuml
+
+Game -> Move: Create
+Move -> Game: Created Move
+
+Game -> GameRule: IsLegalMove (gamestate, move)
+GameRule -> GameState: SetLegalMove()
+GameState -> GameRule
+GameRule -> GameState: getBoardCall()
+GameState -> GameRule
+
+GameRule -> GameRule
+
+
+
+@enduml

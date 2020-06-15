@@ -1,0 +1,16 @@
+@startuml
+|user|
+start
+:Reset game;
+|client|
+:reset board;
+:send resetGame;
+|Server|
+:read resetGame;
+:initialize a new Game State;
+: send the new game state;
+|client|
+:read new game state;
+:display new game state;
+stop
+@enduml

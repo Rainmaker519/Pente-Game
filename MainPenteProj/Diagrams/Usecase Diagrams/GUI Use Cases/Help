@@ -1,0 +1,15 @@
+@startuml
+
+start
+floating note left: Help
+:the user clicks on help;
+:Menu Pops up ;
+fork
+:User clicks on about;
+:File opens with instructions on how to use the GUI;
+fork again
+:User clicks on Game Rules;
+:File Opens with the rules all game modes;
+end fork
+stop
+@enduml

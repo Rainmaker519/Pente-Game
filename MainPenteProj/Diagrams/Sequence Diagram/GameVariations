@@ -1,0 +1,36 @@
+@startuml
+
+activate Options
+Options -> GameVariation: select ruleset
+activate GameVariation
+
+GameVariation -> PlayGame: begin game
+deactivate GameVariation
+activate PlayGame
+
+PlayGame -> EndGame: game ends
+deactivate PlayGame
+activate EndGame
+
+EndGame -> Game: user clicks Game
+deactivate EndGame
+activate Game
+
+Game -> NewGame: start new game
+deactivate Game
+activate NewGame
+
+NewGame -> Options: choose new ruleset
+deactivate NewGame
+deactivate Options
+
+Game -> RestartGame: restart game
+activate RestartGame
+
+RestartGame -> PlayGame: restart with same ruleset
+deactivate RestartGame
+
+Game -> Quit: quit game
+deactivate Game
+
+@enduml

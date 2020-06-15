@@ -1,0 +1,38 @@
+@startuml
+
+
+
+
+|Local Game|
+start
+floating note left: quit
+:the user clicks on quit;
+:A message pops up asking them to confirm;
+fork
+:yes;
+:program closes;
+fork again
+:cancel;
+:menu closes and user can continue game;
+end fork
+stop
+
+|#AntiqueWhite| Network Game User 1|
+start
+floating note left: quit
+:the user clicks on quit;
+:A message pops up asking them to confirm;
+fork
+:yes;
+:program closes;
+fork again
+:cancel;
+:menu closes and user can continue game;
+end fork
+
+|#AntiqueWhite| Network Game User 2|
+:Second user is shown message that player has left the game;
+:user is rerouted to main screen;
+stop
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+
+
+|Local Game|
+start
+:Clicks on New Game;
+:Message pops up asking to confirm;
+fork
+:yes;
+:game restarts;
+fork again
+:cancel;
+:messages closes and user(s) can return to game;
+endfork 
+stop
+
+|#AntiqueWhite| Network Game|
+start
+:Clicks on New Game;
+:Message pops up asking to confirm;
+fork
+:yes;
+:game restarts;
+fork again
+:cancel;
+:messages closes and user(s) can return to game;
+end fork
+stop
+
+
+@enduml

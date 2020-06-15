@@ -1,0 +1,43 @@
+@startuml
+
+start
+floating note left: PlayGame
+:Play New Game; 
+:Choose Game Variation;
+:Choose Player Options; 
+:Start Game; 
+fork 
+	:1 player; 
+	:Start game;
+	:Place move;
+	if (Legal move) then (stone placed)
+	else (place new stone)
+	stop
+	endif
+	if (Not winning move) then (stone placed) 
+	else (end game)
+	stop 
+	endif
+	:wait for computer;
+	
+fork again
+	:2 Player;
+	:Start game; 
+	:Player 1 place stone; 
+	:Check if legal move; 
+	:Check if winning move; 
+	:Player 2 place stone; 
+	:Check if legal move; 
+	:Check if winning move; 
+		
+fork again
+	:Spectate;	
+	:Watch game; 
+
+endfork
+	:Repeat until game is won; 
+	:End Game; 
+
+
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+actor client
+
+
+client -->( new game)
+client -->( quit)
+client -->( Change Game Variation)  
+client -->( Choose Player Mode) 
+client -->( Help) 
+client -->( place piece)
+client -->(restart game)
+@enduml

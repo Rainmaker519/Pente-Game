@@ -1,0 +1,28 @@
+@startuml
+
+start
+floating note left: Change Game variation
+:the user clicks on Options; 
+:the user clicks on Choose Player Mode; 
+
+fork
+	:user chooses 1 Player; 
+	:user plays a game against the computer; 
+fork again
+	:user chooses 2 Player Local;
+	:user plays a local game with another person;  
+fork again
+	:user chooses 2 Player Network;
+	:user plays a game over a network with another person;  
+fork again
+	:user chooses Join Game;
+	:user joins the first available game of Pente;
+fork again
+	:user chooses Spectate Network;
+	:user spectates a game of Pente;  
+endfork
+stop
+:Game ends; 
+:user can choose to play a new game or restart game;  
+
+@enduml

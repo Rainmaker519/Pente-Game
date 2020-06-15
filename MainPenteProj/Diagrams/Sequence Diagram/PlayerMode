@@ -1,0 +1,45 @@
+@startuml
+
+activate Options
+Options -> PlayerMode: select player mode
+activate PlayerMode
+
+PlayerMode -> LocalPlay: 1 player or 2 player local
+activate LocalPlay
+
+LocalPlay -> PlayGame: begin game
+deactivate LocalPlay
+activate PlayGame
+
+PlayerMode -> NetworkPlay: 2 player network, join game, or spectate
+deactivate PlayerMode
+activate NetworkPlay
+NetworkPlay -> PlayGame: add IP and begin game
+deactivate NetworkPlay
+
+PlayGame -> EndGame: game ends
+deactivate PlayGame
+activate EndGame
+
+EndGame -> Game: user clicks Game
+deactivate EndGame
+activate Game
+
+Game -> NewGame: start new game
+deactivate Game
+activate NewGame
+
+NewGame -> Options: choose new player mode
+deactivate NewGame
+deactivate Options
+
+Game -> RestartGame: restart game
+activate RestartGame
+
+RestartGame -> PlayGame: restart with same player mode
+deactivate RestartGame
+
+Game -> Quit: quit game
+deactivate Game
+
+@enduml

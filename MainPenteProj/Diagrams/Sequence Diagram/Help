@@ -1,0 +1,22 @@
+@startuml
+
+activate InitialBoard
+InitialBoard -> SelectedHelp: Show menus
+activate SelectedAbout
+activate SelectedHelp
+activate DisplayAboutFile
+SelectedHelp -> SelectedAbout: Show help menu 
+SelectedAbout -> DisplayAboutFile: Show About menu
+
+deactivate InitialBoard
+deactivate SelectedHelp
+deactivate SelectedAbout
+
+DisplayAboutFile -> InitialBoard: Get and display about file
+
+
+deactivate DisplayAboutFile
+
+
+
+@enduml

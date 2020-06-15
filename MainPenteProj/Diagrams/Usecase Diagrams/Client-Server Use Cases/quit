@@ -1,0 +1,19 @@
+@startuml
+|user|
+start
+:send quit;
+|client|
+:displayes message box;
+|user|
+:user chooses 'quit' or 'cancel';
+|client|
+fork
+:Quit;
+:Shuts down local listener and closes gui;
+fork again
+:cancel;
+:Display box closes;
+end fork
+stop
+@enduml
+

@@ -1,0 +1,32 @@
+@startuml
+
+|Local Game|
+start
+floating note left: Change Game variation
+:Player starts Main;
+:Player clicks on Options tab;
+:Player clicks GameVariations;
+:Dialog box pops up with implemented game variations;
+fork
+:The user chooses Pente Standard;
+:The user plays Pente Standard;
+fork again
+:The user chooses Pente Tournament;
+:The user plays Pente Tournament;
+fork again
+:The user chooses Pente FreeStyle;
+:The user plays Pente FreeStyle;
+fork again
+:The user chooses Pente NoCaptures;
+:The user plays Pente NoCaptures;
+endfork
+stop
+:Game ends;
+fork
+:The user selects Game tab;
+:The user chooses Quit;
+forkagain
+:The user selects Game tab;
+:The user selects New Game;
+
+@enduml

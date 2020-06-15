@@ -1,0 +1,29 @@
+@startuml
+|user|
+start
+:tries to place a piece;
+|client|
+:write move;
+|server|
+:read move;
+:tests if move is legal;
+fork
+:legal move;
+fork again
+:illegal move;
+end fork
+:write gamestate;
+|client|
+:read game state;
+|user|
+:user chooses 'quit' or 'cancel';
+|client|
+fork
+:Quit;
+:Shuts down local listener and closes gui;
+fork again
+:cancel;
+:Display box closes;
+end fork
+stop
+@enduml
